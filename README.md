@@ -5,7 +5,7 @@
 <p align="center"><b>تحكي للكاميرا… وClaude بيرجعلك الريل جاهز للنشر.</b><br>
 بيقص ويشيل السكتات، بيكتب هوك وكابشن عربي بتوقيت كل كلمة، وبيرسم موشن غرافيك من معنى كلامك. كله بملف MP4 واحد، بدون أي برنامج مونتاج، والفيديو ما بيطلع من جهازك.</p>
 
-<p align="center"><a href="https://github.com/ahmadalsakka1994/alsakka-video/releases/latest/download/alsakka-video.plugin"><img src="_pkg/btn-install.png" alt="حمّل البلجن" width="420"></a></p>
+<p align="center"><a href="https://github.com/ahmadalsakkaofficial/alsakka-video/releases/latest/download/alsakka-video.plugin"><img src="_pkg/btn-install.png" alt="حمّل البلجن" width="420"></a></p>
 
 ## ⚡ التثبيت
 
@@ -17,7 +17,7 @@
 <div dir="ltr">
 
 ```
-ahmadalsakka1994/alsakka-video
+ahmadalsakkaofficial/alsakka-video
 ```
 
 </div>
@@ -34,7 +34,7 @@ ahmadalsakka1994/alsakka-video
 <div dir="ltr">
 
 ```
-claude plugin marketplace add ahmadalsakka1994/alsakka-video
+claude plugin marketplace add ahmadalsakkaofficial/alsakka-video
 ```
 
 ```
