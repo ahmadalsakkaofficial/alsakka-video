@@ -1,0 +1,36 @@
+<!doctype html>
+<html dir="rtl"><head><meta charset="utf-8">
+<style>
+:root{--acc:var(--brand-acc,#FFC928)}
+html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden}
+#cap{position:absolute;left:70px;right:70px;text-align:center;font-family:Cap;font-weight:900;color:#fff;line-height:1.25;transform-origin:50% 50%}
+#cap .w{display:inline-block;white-space:pre}
+#cap .k{color:var(--acc)}
+/* default: white + accent, soft shadow, slide up (key captions pop) */
+.default{font-size:66px;text-shadow:0 4px 18px rgba(0,0,0,.55),0 2px 4px rgba(0,0,0,.6)}
+.default .k{font-size:1.3em}
+/* box: dark rounded box, zoom out */
+.box #in{display:inline-block;background:rgba(13,17,23,.80);border-radius:26px;padding:10px 34px 16px}
+.box{font-size:60px}
+.box .k{font-size:1.15em}
+/* big: 2–4 words, large, blur in */
+.big{font-size:92px;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+.big .k{font-size:1.15em}
+/* clean: lighter weight, wide shadow, fade */
+.clean{font-size:62px;font-weight:700;text-shadow:0 0 28px rgba(0,0,0,.65),0 3px 6px rgba(0,0,0,.5)}
+.clean .k{font-size:1.2em}
+</style></head><body>
+<div id="cap"><span id="in"></span></div>
+<script>
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),eo=x=>1-Math.pow(1-cl(x),3),sp=x=>{x=cl(x);return 1-Math.exp(-7*x)*Math.cos(10*x)};
+let C;
+window.setup=c=>{C=c;document.body.className=c.style;
+  document.getElementById('in').innerHTML=c.words.map(([w,,,k])=>`<span class="w${k?' k':''}">${w}</span>`).join(' ');
+  const e=document.getElementById('cap');e.style.top=(c.y-60)+'px';};
+window.render=t=>{const e=document.getElementById('cap'),s=C.style;let tr='',op=1,fl='none';
+  if(s==='default'){if(C.key){const k=sp(t/0.3);tr=`scale(${0.7+0.3*k})`;}else{tr=`translateY(${(1-eo(t/0.2))*40}px)`;}op=cl(t/0.08);}
+  if(s==='box'){tr=`scale(${1.25-0.25*eo(t/0.25)})`;op=cl(t/0.1);}
+  if(s==='big'){fl=`blur(${(1-eo(t/0.25))*14}px)`;tr=`scale(${1.08-0.08*eo(t/0.25)})`;op=cl(t/0.12);}
+  if(s==='clean'){op=eo(t/0.25);tr=`translateY(${(1-eo(t/0.25))*12}px)`;}
+  e.style.transform=tr;e.style.opacity=op;e.style.filter=fl;};
+</script></body></html>

@@ -1,0 +1,7 @@
+{
+  "name": "alsakka",
+  "owner": { "name": "Ahmad Alsakka" },
+  "plugins": [
+    { "name": "alsakka-video", "source": "./", "description": "Claude بيمنتجلك الريل: من الفيديو الخام لـ MP4 جاهز" }
+  ]
+}
